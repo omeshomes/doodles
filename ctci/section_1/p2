@@ -1,0 +1,46 @@
+// Given two strings, wirte a method to decide if one is a permutation of the other.
+
+// function isperm(str1, str2) {
+// 	var newstr1 = str1.split('').sort().join('');
+// 	var newstr2 = str2.split('').sort().join('');
+// 	return newstr1 === newstr2;
+// }
+
+// NOTE: join does not modify in place
+
+// ASK: is it case sensitive?? 
+// Is white space significant?
+
+
+function isperm(str1, str2) {
+	if (str1.length !== str2.length) {
+		return false;
+	}
+
+	var letters = {};
+
+	for (var i = 0; i < str1.length; i++) {
+		if (!letters[str1[i]]) {
+			letters[str1[i]] = 1;
+		} else {
+			letters[str1[i]]++;
+		}
+	}
+
+	for (var j = 0; j < str2.length; j++) {
+		if (!letters[str2[j]]) {
+			return false;
+		} else {
+			letters[str2[j]]--;
+			if (letters[str2[j]] < 0) {
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
+
+console.log(isperm('eat', 'tea')); // true
+console.log(isperm('aag', 'gaa')); // true
+console.log(isperm('hey', 'dog')); // false

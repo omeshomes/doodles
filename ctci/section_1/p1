@@ -1,0 +1,17 @@
+// Implement an algorithm to determine if a string has all unique characters. 
+// What if you cannot use additional data structures?
+
+function strunique(str) {
+	var table = {};
+	for (var i = 0; i < str.length; i++) {
+		if (table[str[i]]) {
+			return false;
+		}
+		table[str[i]] = true;
+	}
+	return true;
+}
+
+console.log(strunique('food')); // false
+console.log(strunique('eat')); // true
+console.log(strunique('a')); // true
