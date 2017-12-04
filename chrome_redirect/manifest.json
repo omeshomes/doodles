@@ -1,0 +1,27 @@
+{
+  "name": "Redirect",
+  "description": "Redirect websites to google",
+  "version": "1.0",
+  "manifest_version": 2,
+  "background": {"scripts":["background.js"]},
+  "permissions": [
+    "webRequest",
+    "*://facebook.com/*",
+    "*://www.facebook.com/*",
+    "webRequestBlocking"
+  ]
+}
+
+// {
+//   "name": "The Pirate Bay",
+//   "description": "Redirect The Pirate Bay to a different host",
+//   "version": "1.0",
+//   "manifest_version": 2,
+//   "background": {"scripts":["background.js"]},
+//   "permissions": [
+//     "webRequest",
+//     "*://thepiratebay.se/*",
+//     "*://www.thepiratebay.se/*",
+//     "webRequestBlocking"
+//   ]
+// }
